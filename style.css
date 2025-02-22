@@ -142,3 +142,14 @@ button:hover {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
+
+/* ... (rest of your CSS unchanged) ... */
+#weatherCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+/* ... (ensure this is present) ... */
