@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #72EDF2, #5151E5);
+    transition: background 1s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    color: white;
+    width: 320px;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-right: 10px;
+    outline: none;
+    font-size: 1em;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #fff;
+}
+
+#tempToggle {
+    padding: 8px 16px;
+    margin-left: 10px;
+    font-size: 0.9em;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#weatherDisplay {
+    margin-top: 25px;
+}
+
+#cityName {
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+#temperature {
+    font-size: 3em;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+#description {
+    font-size: 1.2em;
+    text-transform: capitalize;
+    opacity: 0.9;
+    margin: 5px 0;
+}
+
+#humidity, #chanceOfRain, #fireDanger, #uvIndex {
+    font-size: 1.1em;
+    font-weight: 400;
+    opacity: 0.85;
+    margin: 5px 0;
+}
+
+#possibleRain {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #cceeff;
+    margin: 5px 0;
+    display: none;
+}
+
+#weatherMood {
+    font-size: 2em;
+    margin: 10px 0;
+    animation: bounce 2s infinite;
+}
+
+#weatherIcon {
+    font-size: 3.5em;
+    margin-top: 15px;
+}
+
+/* Dynamic backgrounds */
+.sunny { background: linear-gradient(135deg, #FFD700, #FFA500); }
+.cloudy { background: linear-gradient(135deg, #A9A9A9, #696969); }
+.rainy { background: linear-gradient(135deg, #4682B4, #1E90FF); }
+.snowy { background: linear-gradient(135deg, #E6E6FA, #B0C4DE); }
+
+/* Night overlay */
+.night::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 20, 0.3);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Canvas for weather effects */
+#weatherCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
